@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A zero-build starter for testing one useful business workflow.">
+  <title>Weekend MVP Starter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">From Idea to App in One Weekend</p>
+      <h1>Weekend MVP Starter</h1>
+      <p class="lede">A fictional request tracker you can reshape into one useful workflow.</p>
+      <p class="privacy-note"><strong>Prototype safely:</strong> use fictional data only. Browser storage is not a secure database.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap layout">
+    <section class="panel" aria-labelledby="form-heading">
+      <h2 id="form-heading">Add a request</h2>
+      <p class="section-intro">Create one record, then test whether the workflow is clear to another person.</p>
+      <form id="item-form">
+        <input id="item-id" type="hidden">
+        <div class="field">
+          <label for="title">Title <span aria-hidden="true">*</span></label>
+          <input id="title" name="title" required maxlength="80" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="description">Description <span aria-hidden="true">*</span></label>
+          <textarea id="description" name="description" rows="4" required maxlength="500"></textarea>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option>Inquiry</option>
+              <option>Quote</option>
+              <option>Follow-up</option>
+              <option>Task</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option>New</option>
+              <option>In progress</option>
+              <option>Done</option>
+            </select>
+          </div>
+        </div>
+        <div class="button-row">
+          <button id="save-button" type="submit">Add request</button>
+          <button id="cancel-button" class="secondary" type="button" hidden>Cancel edit</button>
+        </div>
+        <p id="form-message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel records" aria-labelledby="records-heading">
+      <div class="records-heading">
+        <div>
+          <h2 id="records-heading">Requests</h2>
+          <p id="summary" class="summary" aria-live="polite"></p>
+        </div>
+        <div class="button-row compact">
+          <button id="export-button" class="secondary" type="button">Export JSON</button>
+          <button id="import-button" class="secondary" type="button">Import JSON</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+          <button id="reset-button" class="danger-text" type="button">Reset samples</button>
+        </div>
+      </div>
+
+      <div class="filters" aria-label="Filter requests">
+        <div class="field">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Search title or description">
+        </div>
+        <div class="field">
+          <label for="filter-status">Status</label>
+          <select id="filter-status">
+            <option value="all">All statuses</option>
+            <option>New</option>
+            <option>In progress</option>
+            <option>Done</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="data-message" class="message" role="status" aria-live="polite"></p>
+      <div id="item-list" class="item-list"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h3>No matching requests</h3>
+        <p>Add a fictional request or change your filters.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>Prototype for learning. Not production-ready software.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
+
