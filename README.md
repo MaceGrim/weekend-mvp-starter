@@ -1,7 +1,5 @@
 # Weekend MVP Starter
 
-> **Participant-facing**
-
 A small request tracker you can adapt into one testable business workflow. It uses only three source files: `index.html` for structure, `styles.css` for appearance, and `app.js` for behavior and browser storage.
 
 ## Quick start
@@ -26,4 +24,3 @@ Your GitHub repository and GitHub Pages site may be public. Use fictional data o
 ## Optional GitHub Pages publication
 
 In the repository on GitHub: **Settings -> Pages -> Deploy from a branch -> main -> / (root)**. Publishing makes the site public.
-
